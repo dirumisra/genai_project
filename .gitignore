@@ -22,7 +22,7 @@ env/
 venv/
 .venv/
 .genai_env/
-
+genai_env/
 
 # ----------------------------------------------------------
 # 📦 3. Package build artifacts

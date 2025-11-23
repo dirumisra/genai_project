@@ -1,0 +1,73 @@
+# Core GenAI dependencies will be listed here.
+
+##############################################
+# GENAI_HUB / genai_project - requirements  #
+# ----------------------------------------- #
+# Install with: pip install -r requirements.txt
+##############################################
+
+########## CORE UTILITIES & CONFIG ##########
+python-dotenv             # Load secrets & config from .env (API keys, env-specific settings)
+pydantic                  # Data models & validation (useful with FastAPI, structured LLM output)
+PyYAML                    # Read/write YAML config files (models.yaml, vector_db.yaml, app.yaml)
+requests                  # Basic HTTP calls (fallback / non-LLM APIs)
+httpx                     # Async HTTP client (great for async agents or FastAPI)
+tqdm                      # Progress bars (embedding generation, ingestion pipelines)
+tabulate                  # Pretty-print tables in terminal (debugging, evaluation)
+rich                      # Colored/log structured terminal output, tracebacks
+numpy                     # Numerical ops, vector math
+pandas                    # Tabular data handling, CSV/Parquet I/O for ETL-style GenAI work
+
+########## LLM PROVIDERS & TOKENIZATION ##########
+openai                    # Official OpenAI Python SDK (GPT-4o, GPT-4o-mini, embeddings, etc.)
+tiktoken                  # Tokenizer for OpenAI models (token counting, cost estimation)
+
+# Optional additional providers – keep if you plan to experiment:
+anthropic                 # Anthropic Claude client (only if you'll use Claude)
+google-generativeai       # Google Gemini client (only if you'll use Gemini)
+
+########## LANGCHAIN & ECOSYSTEM ##########
+langchain                 # Core LangChain abstractions (LLM, chains, tools, agents)
+langchain-community       # Community integrations (vector stores, loaders, tools, callbacks)
+langchain-openai          # OpenAI-specific LangChain wrappers (ChatOpenAI, OpenAIEmbeddings)
+langchain-text-splitters  # Text splitters for chunking docs in RAG pipelines
+langchain-chroma          # Chroma vector store integration for LangChain
+
+########## VECTOR STORES & EMBEDDINGS ##########
+chromadb                  # Local vector database (simple, fast) for RAG (Chroma)
+faiss-cpu                 # Facebook AI Similarity Search (fast ANN search, good for large corpora)
+sentence-transformers     # Local embedding models from Hugging Face (alternative to OpenAI embeddings)
+
+########## WEB APPS & APIS (UI + BACKEND) ##########
+streamlit                 # Fast data/LLM web apps & dashboards (your chat UI, RAG demos)
+fastapi                   # High-performance REST API framework (backend for GenAI services)
+uvicorn[standard]         # ASGI server to run FastAPI apps in dev / container
+
+########## DOCUMENT & TEXT PROCESSING ##########
+beautifulsoup4            # HTML parsing & web page cleaning (if you scrape docs)
+lxml                      # Fast XML/HTML parser backend (used with BeautifulSoup)
+pymupdf                   # PDF parsing (MuPDF engine) - text extraction for RAG
+pdfplumber                # Alternative PDF text extraction (tables, complex layouts)
+python-docx               # Read .docx files as text (for ingesting Word docs)
+python-multipart          # File uploads in FastAPI (for user-uploaded docs)
+
+########## JUPYTER / NOTEBOOK SUPPORT ##########
+notebook                  # Classic Jupyter Notebook
+jupyterlab                # JupyterLab interface (optional but nice)
+ipykernel                 # Allows your conda env to be a Jupyter kernel
+
+########## TESTING & QUALITY ##########
+pytest                    # Unit/integration testing for pipelines & API
+pytest-asyncio            # Testing async FastAPI handlers or async tools
+typeguard                 # Runtime type checking (good for catching bugs early)
+
+########## OPTIONAL - EVAL & EXPERIMENT TRACKING ##########
+datasets                  # Hugging Face datasets (for eval / benchmarking)
+evaluate                  # Evaluation helpers (BLEU, ROUGE, etc.) - use if you do systematic eval
+
+##############################################
+# NOTES:
+# - You can comment out providers you don't use (anthropic, google-generativeai).
+# - If you later pin versions, use e.g. openai==1.54.0 (after you find a stable combo).
+# - Always install inside your conda env: `conda activate genai_env`
+##############################################

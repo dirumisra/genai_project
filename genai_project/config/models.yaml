@@ -1,0 +1,7 @@
+default_model: gpt-4o-mini
+
+models:
+  gpt-4o-mini:
+    provider: openai
+    name: gpt-4o-mini
+    max_tokens: 1024

@@ -1,0 +1,4 @@
+default: chroma
+
+chroma:
+  persist_directory: ./data/embeddings/dev/

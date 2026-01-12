@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environments
+env/
+venv/
+.genai_env/
+.env
+envs/.env.*
+
+# Data & logs
+data/
+logs/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
